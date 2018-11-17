@@ -16,7 +16,7 @@ class User < ApplicationRecord
       nil 
     end 
   end 
-  def reset_session_token
+  def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64
     user.save!
     self.session_token
